@@ -6,10 +6,6 @@ var config = {
   };
 firebase.initializeApp(config);
 var trucksRef = firebase.database().ref('trucks');
-trucksRef.on('child_added', function(data) {
-    var val = data.val();
-    addMarker(new google.maps.LatLng(val.lat, val.lng));
-});
 
 var map, lat, lng, activeImage, image;
 
@@ -38,6 +34,10 @@ function addMarker(coord, isActive) {
 function setupMap(mapOptions) {
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     addMarker(mapOptions.center, true);
+    trucksRef.on('child_added', function(data) {
+        var val = data.val();
+        addMarker(new google.maps.LatLng(val.lat, val.lng));
+    });
 }
 
 function initialize() {
