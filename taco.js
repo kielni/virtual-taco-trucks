@@ -58,13 +58,13 @@ function initialize() {
         setupMap(mapOptions);
     }
     activeImage = {
-       url: '/taco_truck_sm_active.png',
+       url: 'taco_truck_sm_active.png',
        size: new google.maps.Size(94, 50),
        origin: new google.maps.Point(0, 0),
        anchor: new google.maps.Point(0, 32)
     };
     image = {
-       url: '/taco_truck_sm.png',
+       url: 'taco_truck_sm.png',
        size: new google.maps.Size(94, 50),
        origin: new google.maps.Point(0, 0),
        anchor: new google.maps.Point(0, 32)
